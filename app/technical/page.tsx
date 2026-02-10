@@ -427,6 +427,64 @@ export default function TechnicalPage() {
             </ul>
           </section>
 
+          {/* Landing Page & Funnel Strategy */}
+          <section className="mb-14">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Landing Page &amp; Web Funnel</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Alongside the mobile app, My Chefsito includes a public-facing landing page that serves as the
+              primary web acquisition funnel. The landing page gives visitors a taste of the app&apos;s core value —
+              recipe search — then strategically directs them toward downloading the full app for AI scanning,
+              voice-guided cooking, and Instacart integration.
+            </p>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Stack</h3>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full border-collapse text-left">
+                <thead>
+                  <tr className="bg-[#16a34a] text-white">
+                    <th className="px-6 py-3 font-semibold rounded-tl-lg">Layer</th>
+                    <th className="px-6 py-3 font-semibold rounded-tr-lg">Technology</th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-700">
+                  {[
+                    ['Framework', 'Next.js 16 (App Router, TypeScript)'],
+                    ['Styling', 'Tailwind CSS v4'],
+                    ['AI Classification', 'OpenAI GPT-4o-mini (search intent detection)'],
+                    ['Recipe Data', 'Spoonacular API'],
+                    ['Hosting', 'Vercel'],
+                  ].map(([layer, tech], i) => (
+                    <tr key={layer} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                      <td className="px-6 py-3 font-medium text-gray-900">{layer}</td>
+                      <td className="px-6 py-3">{tech}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Funnel flow</h3>
+            <div className="bg-gray-900 text-gray-100 rounded-2xl p-6 overflow-x-auto font-mono text-sm mb-6">
+              <pre>{`Visitor lands on homepage
+  → Searches by recipe name or ingredients
+    → OpenAI classifies intent (recipe vs. ingredients)
+      → Spoonacular returns matching recipes
+        → Results modal includes "Download App" CTAs
+          → Recipe detail view reinforces app value
+            → App Store / Google Play download`}</pre>
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-3">How it works</h3>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              The landing page exposes a single search input that accepts both recipe names and ingredient lists.
+              On submit, the query is sent to a Next.js API route that uses GPT-4o-mini to classify the user&apos;s
+              intent, then routes to the appropriate Spoonacular endpoint. Results are displayed in a modal with
+              prominent download CTAs at every touchpoint — the results header, each recipe card, and the recipe
+              detail view. The experience is intentionally limited compared to the full app (no scanning, no
+              cooking mode, no voice) to create a natural upgrade path.
+            </p>
+          </section>
+
           {/* Platform Support */}
           <section className="mb-14">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Platform Support</h2>
