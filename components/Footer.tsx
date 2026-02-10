@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-700 text-center text-gray-400">
-          <p>&copy; 2024 My Chefsito. All rights reserved.</p>
+          <p>&copy; 2026 My Chefsito. All rights reserved.</p>
         </div>
       </div>
     </footer>

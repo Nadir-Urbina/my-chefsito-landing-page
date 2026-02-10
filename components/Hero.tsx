@@ -124,23 +124,25 @@ export default function Hero() {
           </div>
 
           <form onSubmit={handleSearch}>
-            <div className="bg-white/90 backdrop-blur-md border-2 border-gray-300 rounded-2xl p-2 flex items-center gap-3 focus-within:border-[#16a34a] transition-colors shadow-lg">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" strokeWidth="2" className="ml-3">
-                <circle cx="9" cy="9" r="6"/>
-                <path d="M14 14 L18 18"/>
-              </svg>
-              <input
-                type="text"
-                value={searchInput}
-                onChange={handleInputChange}
-                placeholder={placeholder}
-                disabled={isLoading}
-                className="flex-1 bg-transparent border-none outline-none text-base py-3 text-gray-900 placeholder:text-gray-400 disabled:opacity-50"
-              />
+            <div className="bg-white/90 backdrop-blur-md border-2 border-gray-300 rounded-2xl p-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 focus-within:border-[#16a34a] transition-colors shadow-lg">
+              <div className="flex items-center gap-3 flex-1">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af" strokeWidth="2" className="ml-3 flex-shrink-0">
+                  <circle cx="9" cy="9" r="6"/>
+                  <path d="M14 14 L18 18"/>
+                </svg>
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={handleInputChange}
+                  placeholder={placeholder}
+                  disabled={isLoading}
+                  className="flex-1 bg-transparent border-none outline-none text-base py-3 text-gray-900 placeholder:text-gray-400 disabled:opacity-50 min-w-0"
+                />
+              </div>
               <button
                 type="submit"
                 disabled={isLoading || !searchInput.trim()}
-                className="bg-[#16a34a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#16a34a] text-white px-7 py-3.5 rounded-xl font-semibold transition-colors hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed sm:flex-shrink-0"
               >
                 {isLoading ? 'Searching...' : 'Search'}
               </button>
