@@ -452,7 +452,9 @@ export default function TechnicalPage() {
                     ['Styling', 'Tailwind CSS v4'],
                     ['AI Classification', 'OpenAI GPT-4o-mini (search intent detection)'],
                     ['Recipe Data', 'Spoonacular API'],
+                    ['Analytics', 'Vercel Web Analytics'],
                     ['Hosting', 'Vercel'],
+                    ['Domains', 'mychefsito.com, mychefsito.food'],
                   ].map(([layer, tech], i) => (
                     <tr key={layer} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                       <td className="px-6 py-3 font-medium text-gray-900">{layer}</td>
@@ -482,6 +484,15 @@ export default function TechnicalPage() {
               prominent download CTAs at every touchpoint — the results header, each recipe card, and the recipe
               detail view. The experience is intentionally limited compared to the full app (no scanning, no
               cooking mode, no voice) to create a natural upgrade path.
+            </p>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Domains &amp; Analytics</h3>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Two custom domains have been acquired — <strong className="text-gray-900">mychefsito.com</strong> and <strong className="text-gray-900">mychefsito.food</strong> —
+              both pointing to the Vercel deployment. Vercel Web Analytics is integrated via
+              the <code className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">@vercel/analytics</code> package,
+              tracking page views, unique visitors, and bounce rates across all routes to measure funnel
+              effectiveness and conversion from web visitor to app download.
             </p>
           </section>
 
